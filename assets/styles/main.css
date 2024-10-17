@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 body {
   margin: 0;
-  background: #f4f4f4;
+  background: #F6FAFF;
   color: #222;
   font-family: "Inter", sans-serif;
 }
@@ -18,19 +18,24 @@ body {
 #header .container {
   position: relative;
   height: 70px;
-  background: #f4f4f4;
+  background: rgba(246, 250, 255, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 9999;
-  max-width: 1120px;
+  max-width: 1190px;
 }
 #header .block {
   display: flex;
   justify-content: left;
   align-items: center;
   gap: 10px;
+}
+#header .block span {
+  color: #4794FF;
 }
 #header .logo {
   display: block;
@@ -40,7 +45,7 @@ body {
 #header h1 {
   margin: 0;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
 }
 #header .centered {
   position: absolute;
@@ -75,7 +80,9 @@ body {
   border-radius: 12px;
 }
 #header .links a:hover {
-  background: #ecebec;
+  background: rgba(236, 235, 236, 0.5);
+  -webkit-backdrop-filter: blur(14px);
+          backdrop-filter: blur(14px);
 }
 
 .button {
@@ -96,18 +103,26 @@ body {
 .primaryButton {
   font-size: 16px;
   padding: 15px 25px;
-  background: linear-gradient(in oklab, #213e60, #2e5786);
+  background: linear-gradient(in oklab, #4794FF, #7ab2ff);
   border-radius: 12px;
   color: #f3f3f3;
+  transition: all 125ms ease-in-out;
+}
+.primaryButton:hover {
+  background: linear-gradient(in oklab, #4794FF, #adcfff);
 }
 
 .secondaryButton {
   font-size: 14px;
   padding: 15px 25px;
-  background: rgba(244, 244, 244, 0.9);
+  background: rgba(246, 250, 255, 0.9);
   border: 2px solid rgba(51, 51, 51, 0.8);
   border-radius: 12px;
   color: #333;
+  transition: all 125ms ease-in-out;
+}
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 900px) {
@@ -122,14 +137,15 @@ body {
 #hero .container {
   height: 100%;
 }
-#hero .mesh {
+
+.mesh {
   margin: 15px auto;
   height: 100%;
   width: 100%;
   background: radial-gradient(circle at 91% 11%, hsla(13, 100%, 88%, 0.66) 4.0387722132%, transparent 37.2265767974%), radial-gradient(circle at 66% 37%, hsl(323, 100%, 88%) 0%, transparent 63.3364095611%), radial-gradient(circle at 36% 87%, hsl(268, 100%, 88%) 12.1075360571%, transparent 63.3364095611%);
   border-radius: 24px;
 }
-#hero .mesh .container {
+.mesh .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,13 +155,13 @@ body {
   height: 100%;
   margin: 0 auto;
 }
-#hero .mesh .test {
+.mesh .container .test {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
 }
-#hero .mesh .test .person {
+.mesh .container .test .person {
   display: block;
   width: 50px;
   height: 50px;
@@ -156,20 +172,20 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-#hero .mesh .test .person:first-child {
+.mesh .container .test .person:first-child {
   margin: 0;
 }
-#hero .mesh .test p {
+.mesh .container .test p {
   line-height: 50px;
   margin-left: 15px;
 }
-#hero .lead {
+.mesh .lead {
   margin: 0;
   font-size: 38px;
   padding: 0 20px;
   text-align: center;
 }
-#hero p {
+.mesh p {
   margin: 0;
   font-size: 20px;
   display: block;
@@ -177,12 +193,12 @@ body {
   font-weight: 300;
   color: #333;
 }
-#hero .buttons {
+.mesh .buttons {
   display: flex;
   flex-direction: row;
   gap: 15px;
 }
-#hero .buttons .button {
+.mesh .buttons .button {
   font-size: 16px;
 }
 
@@ -215,7 +231,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #e7e7e7;
+  background: #ddecff;
   border-radius: 44px;
   margin: 0;
 }
@@ -227,7 +243,7 @@ body {
   height: 34px;
   text-align: center;
   line-height: 34px;
-  background: #213e60;
+  background: #4794FF;
   color: #f3f3f3;
   font-size: 14px;
   border-radius: 34px;
@@ -265,30 +281,33 @@ body {
 }
 
 #problems {
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 100px;
 }
 #problems .cardContainer {
-  padding-top: 50px;
+  margin-top: 50px;
+}
+
+.cardContainer {
+  padding-top: 100px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
 }
-#problems .cardContainer .card {
-  flex-grow: 1;
+.cardContainer .card {
+  flex: 1 1 30%;
   width: 100%;
-  max-width: 400px;
   background: #fff;
   border-radius: 20px;
   overflow: hidden;
 }
-#problems .cardContainer .card .cardImgBox {
+.cardContainer .card .cardImgBox {
   width: 100%;
   aspect-ratio: 3/2;
-  background: linear-gradient(to bottom, #7ba3d2, #a1bedf);
+  background: linear-gradient(to bottom, white, white);
 }
-#problems .cardContainer .card .cardImgBox .cardImg {
+.cardContainer .card .cardImgBox .cardImg {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -297,16 +316,16 @@ body {
   box-sizing: border-box;
   overflow: hidden;
 }
-#problems .cardContainer .card .cardInfo {
+.cardContainer .card .cardInfo {
   padding: 15px;
 }
-#problems .cardContainer .card .cardInfo h3 {
+.cardContainer .card .cardInfo h3 {
   margin: 0;
   padding: 0;
   font-size: 20px;
   font-weight: 600;
 }
-#problems .cardContainer .card .cardInfo .lead {
+.cardContainer .card .cardInfo .lead {
   margin: 0;
   margin-top: 10px;
   line-height: 1.5em;
@@ -321,11 +340,12 @@ body {
   display: flex;
   flex-direction: row;
   align-items: top;
-  gap: 25px;
+  gap: 80px;
 }
 #solution .column2 .imgSpotlight {
   display: block;
   width: 100%;
+  min-height: 300px;
   margin: 0;
   padding: 0;
   flex-grow: 1;
@@ -379,7 +399,7 @@ body {
 #partners {
   width: 100%;
   overflow: hidden;
-  padding: 50px 0;
+  padding: 100px 0;
 }
 #partners .scroll-container {
   margin-top: 50px;
@@ -398,11 +418,11 @@ body {
 }
 #partners .scroll-container::before {
   left: 0;
-  background: linear-gradient(to right, #f4f4f4, rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, #F6FAFF, rgba(255, 255, 255, 0));
 }
 #partners .scroll-container::after {
   right: 0;
-  background: linear-gradient(to left, #f4f4f4, rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, #F6FAFF, rgba(255, 255, 255, 0));
 }
 #partners .scroll-content {
   display: flex;
@@ -425,7 +445,261 @@ body {
   }
 }
 .container {
-  max-width: 1400px;
+  max-width: 1260px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+#slogan {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+#slogan .container {
+  height: 100%;
+}
+#slogan .container .mesh {
+  height: 100%;
+}
+#slogan .container .mesh .container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#slogan .container .lead {
+  font-size: 44px;
+  font-weight: 800;
+}
+#slogan .container .subtitle {
+  font-size: 17px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.secondaryBackgroundSection {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: #e7f2ff;
+}
+
+#customers {
+  margin: 100px 0;
+}
+#customers .testimonials {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 450px;
+  background: white;
+}
+
+#pricing {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#pricing .sectionHeader {
+  padding-bottom: 50px;
+}
+#pricing .cardContainer {
+  flex-wrap: wrap;
+}
+#pricing .cardHighlight {
+  background: #414C5B;
+  color: #F6FAFF;
+}
+#pricing .cardHighlight .cardPriceBox {
+  background: #566579;
+}
+#pricing .centeredTitle {
+  display: block;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+#pricing .cardPriceBox {
+  height: 100px;
+  background: rgba(246, 250, 255, 0.8);
+  box-sizing: border-box;
+  border-radius: 12px;
+  width: calc(100% - 30px);
+  margin: 0 15px;
+}
+#pricing .cardPriceBox p {
+  margin: 0;
+  display: block;
+  text-align: center;
+  color: #FFB947;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 100px;
+}
+#pricing .cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#pricing .benefit:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-size: 16px;
+  padding-right: 10px;
+}
+#pricing .benefit-not {
+  opacity: 0.6;
+}
+#pricing .benefit.benefit-not:before {
+  content: "\f00d";
+}
+#pricing .button {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+.faq-item:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #F6FAFF;
+}
+.faq-item:last-child::after {
+  display: none;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-question:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f067";
+  font-size: 20px;
+  transition: transform 210ms ease-in-out;
+}
+.faq-question.active:after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 0 15px;
+  border-radius: 12px;
+  transition: max-height 210ms ease-in-out;
+}
+.faq-answer p {
+  padding: 15px 0;
+  margin: 0;
+}
+
+#faq {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#faq .sectionHeader {
+  padding-bottom: 50px;
+}
+#faq .container {
+  max-width: 800px;
+}
+#faq .email-box {
+  margin-top: 30px;
+  border-sizing: border-box;
+  background: #2c333d;
+  color: #F6FAFF;
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#faq .email-box .lead {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+#faq .email-box .form {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+#faq .email-box .form .email {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-size: 16px;
+  background: #414C5B;
+  padding: 10px;
+  border: none;
+  color: #F6FAFF;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+#faq .email-box .form .button {
+  max-width: 200px;
+  width: 100%;
+}
+
+#footer {
+  padding: 20px;
+  background: white;
+}
+#footer .container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#footer .container h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#footer .container h1 p {
+  display: block;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 20px;
+}
+#footer .container h1 span {
+  color: #4794FF;
+}
+#footer .container .copy {
+  font-size: 14px;
+  color: #444;
 }/*# sourceMappingURL=main.css.map */
