@@ -39,14 +39,6 @@ export default function Hero() {
                             background: 'var(--accent)',
                             transition: 'background-color 0.3s ease, transform 0.3s ease',
                         }}
-                        onMouseEnter={(e) => {
-                            e.target.style.backgroundColor = 'var(--accent-hover)';
-                            e.target.style.transform = 'scale(1.05)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.target.style.backgroundColor = 'var(--accent)';
-                            e.target.style.transform = 'scale(1)';
-                        }}
                     >
                         Get Started Free!
                     </a>
