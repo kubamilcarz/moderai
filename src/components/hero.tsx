@@ -32,7 +32,7 @@ export default function Hero() {
                 {/* Call-to-Action Button */}
                 <div className="mt-8">
                     <a
-                        href="#"
+                        href="https://wojciech-janicki.notion.site/1749b1493491803bb7a3f297c7d3368a?pvs=105"
                         className="text-white px-6 py-3 rounded-full text-lg font-medium shadow-lg transition-all duration-300"
                         aria-label="Get Started Free! - Try ModerAI's tools"
                         style={{
